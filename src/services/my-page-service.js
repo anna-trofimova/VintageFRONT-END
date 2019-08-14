@@ -14,9 +14,9 @@ class MyPageService {
     .then(({ data }) => data);   
   }
 
-  editMyPage(user) {
+  editMyPage(user,updated) {
     const {id} = user
-    return this.auth.get(`/myPage/${id}/edit`, {id})
+    return this.auth.get(`/myPage/${id}/edit`, updated)
     .then(({ data }) => data);   
   }
 }
