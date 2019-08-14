@@ -8,9 +8,9 @@ class MyPageService {
     })
   }
 
-  myPage(user) {
-    const {id} = user
-    return this.auth.get('/myPage', {id})
+  myPage() {
+    
+    return this.auth.get('/myPage')
     .then(({ data }) => data);   
   }
 

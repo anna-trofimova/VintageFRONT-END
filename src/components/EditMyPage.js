@@ -1,9 +1,6 @@
-import React, { Component} from "react";
-import {Link } from 'react-router-dom';
-import myPageService from "../services/my-page-service";
+import React, { Component } from 'react'
 
-
-class MyPage extends Component {
+class EditMyPage extends Component {
   state = {
     user: {},
     loading: true,
@@ -33,4 +30,5 @@ class MyPage extends Component {
     );
   }
 }
-export default MyPage;
+
+export default EditMyPage;
