@@ -5,9 +5,10 @@ import Navbar from './components/Navbar.js';
 import PrivateRoute from './components/PrivateRoute.js';
 import AnonRoute from './components/AnonRoute.js';
 
-import Private from './pages/Private';
+// import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import MyPage from './pages/MyPage'
 
 import AuthProvider from './contexts/auth-context.js';
 
@@ -25,7 +26,7 @@ class App extends Component {
             <Switch>
               <AnonRoute path="/signup" component={Signup} />
               <AnonRoute path="/login" component={Login} />
-              <PrivateRoute path="/private" component={Private} />
+              <PrivateRoute path="/myPage" component={MyPage} />
             </Switch>
           </div>
         </AuthProvider>
