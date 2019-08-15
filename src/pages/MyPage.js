@@ -28,7 +28,8 @@ class MyPage extends Component {
       <div>
         {!loading && <><p>HEYYY{user.username}</p>
         {user.phone ? <p>{user.phone}</p> : <p>no</p>}
-        <Link to={`/myPage/${userId}/edit`}>Edit</Link></>}
+        </>}
+        <Link to={`/myPage/${userId}/edit`}>Edit</Link>
       </div>
     );
   }

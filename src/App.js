@@ -9,10 +9,10 @@ import AnonRoute from './components/AnonRoute.js';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage'
+import EditMyPage from './components/EditMyPage'
 
 import AuthProvider from './contexts/auth-context.js';
 
-import './App.css';
 import 'milligram';
 
 class App extends Component {
@@ -26,7 +26,8 @@ class App extends Component {
             <Switch>
               <AnonRoute path="/signup" component={Signup} />
               <AnonRoute path="/login" component={Login} />
-              <PrivateRoute path="/myPage" component={MyPage} />
+              <PrivateRoute exact path="/myPage" component={MyPage} />
+              <PrivateRoute path='/myPage/:id/edit' component={EditMyPage} />
             </Switch>
           </div>
         </AuthProvider>

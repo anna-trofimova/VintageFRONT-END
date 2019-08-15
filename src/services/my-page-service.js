@@ -9,14 +9,12 @@ class MyPageService {
   }
 
   myPage() {
-    
     return this.auth.get('/myPage')
     .then(({ data }) => data);   
   }
 
-  editMyPage(user,updated) {
-    const {id} = user
-    return this.auth.get(`/myPage/${id}/edit`, updated)
+  editMyPage(id,updated) {
+    return this.auth.put(`/myPage/${id}/edit`, updated)
     .then(({ data }) => data);   
   }
 }

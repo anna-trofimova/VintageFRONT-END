@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import withAuth from '../components/withAuth';
 
+
 class Login extends Component {
   state = {
     username: '',
@@ -27,7 +28,7 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <>
+      < div className='auth'>
         <form onSubmit={this.handleFormSubmit}>
           <label htmlFor='username' >Username:</label>
           <input id='username' type='text' name='username' value={username} onChange={this.handleChange}/>
@@ -39,7 +40,7 @@ class Login extends Component {
         <p>You don't have an accout yet?
             <Link to={'/signup'}> Signup</Link>
         </p>
-      </>
+      </div>
     )
   }
 }
