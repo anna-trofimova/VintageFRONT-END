@@ -49,7 +49,6 @@ class EditMyPage extends Component {
     .catch(error => console.log(error));
     // redirect to /myPage
     
-    // high five Jack
   }
 
   render() {

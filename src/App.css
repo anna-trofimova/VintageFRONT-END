@@ -32,8 +32,55 @@
     transform: rotate(360deg);
   }
 }
+
 .container {
-  background-image: url('./images/backgr.jpg')
+  margin: 0 auto;
+  max-width: 112.0rem;
+  /* padding: 0 2.0rem; */
+  position: relative;
+  width: 100%;
+}
+.auth {
+background-image: url('./images/back3.jpg');
+background-position: center;
+background-size: cover;
+max-width: 112.0rem;
+/* width: 100%; */
+height: 100vh;
 }
 
+.first-forms{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-top: 9vh;
+  width: 100%;
+  padding-left: 2vh;
+}
+
+.first-forms label{
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow: 4px 3px 0px #2604042b;
+  
+}
+.first-forms input{
+  background-color: #f8f8ffb8;
+  width: 50%;
+  border-radius: 9px;
+  height: 30px;
+  border-color: transparent;
+}
+
+.first-forms button {
+  font-size: 17px;
+  background: #f8f8ffb8;
+  padding: 4px;
+  margin: 10px;
+  border-radius: 13px;
+  color: #12b719;
+
+}
 /*----------pages---------*/

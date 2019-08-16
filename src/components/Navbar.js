@@ -8,13 +8,13 @@ class Navbar extends Component {
       <div>
         {this.props.isLoggedIn ? (
           <>
-            <p>username: {this.props.user.username}</p>
+            {/* <p>username: {this.props.user.username}</p> */}
             <p onClick={this.props.logout}>Logout</p>
           </>
         ) : (
           <>
-            <Link to='/login'>Login</Link>
-            <Link to='/signup'>Signup</Link>
+            {/* <Link to='/login'>Login</Link>
+            <Link to='/signup'>Signup</Link> */}
           </>
         )}
       </div>

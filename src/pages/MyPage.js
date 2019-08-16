@@ -30,6 +30,7 @@ class MyPage extends Component {
         {user.phone ? <p>{user.phone}</p> : <p>no</p>}
         </>}
         <Link to={`/myPage/${userId}/edit`}>Edit</Link>
+        <Link to={`/items/create`}>Create a post</Link>
       </div>
     );
   }
