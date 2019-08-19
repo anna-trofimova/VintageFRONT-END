@@ -42,7 +42,7 @@ class Signup extends Component {
           <button type='submit' value='Signup'>Signup</button>
         </form>
 
-        <p>Already have account? 
+        <p className='firstButton'>Already have account? 
           <Link to={'/login'}> Login</Link>
         </p>
 

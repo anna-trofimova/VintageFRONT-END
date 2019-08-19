@@ -35,13 +35,13 @@ class App extends Component {
       <Navbar />
           <div className="container">
             <Switch>
-              <AnonRoute path="/signup" component={Signup} />
-              <AnonRoute path="/login" component={Login} />
-              <PrivateRoute exact path="/myPage" component={MyPage} />
-              <PrivateRoute path='/myPage/:id/edit' component={EditMyPage} />
-              <PrivateRoute exact path='/items' component={ItemsList} />
-              <PrivateRoute path='/items/:id' component={ItemDetails} />
-              <PrivateRoute path='/items/create' component={CreateItem} />
+              <AnonRoute path="/signup" exact component={Signup} />
+              <AnonRoute path="/login" exact component={Login} />
+              <PrivateRoute path="/myPage" exact component={MyPage} />
+              <PrivateRoute path='/myPage/:id/edit' exact component={EditMyPage} />
+              <PrivateRoute  path='/items' exact component={ItemsList} />
+              <PrivateRoute path='/items/create' exact component={CreateItem} />
+              <PrivateRoute path='/items/:id' exact component={ItemDetails} />
             </Switch>
           </div>
         </AuthProvider>

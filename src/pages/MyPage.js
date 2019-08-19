@@ -26,8 +26,10 @@ class MyPage extends Component {
     console.log(userId)
     return (
       <div>
-        {!loading && <><p>HEYYY{user.username}</p>
+        {!loading && <><p>HEY {user.username}</p>
         {user.phone ? <p>{user.phone}</p> : <p>no</p>}
+        {user.email ? <p>{user.email}</p> : <p>no</p>}
+        {user.img ? <p>{user.img}</p> : <p>no</p>}
         </>}
         <Link to={`/myPage/${userId}/edit`}>Edit</Link>
         <Link to={`/items/create`}>Create a post</Link>

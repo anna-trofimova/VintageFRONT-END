@@ -5,7 +5,7 @@ import withAuth from './withAuth.js';
 class Navbar extends Component {
   render() {  
     return (
-      <div>
+      <nav className='nav'>
         {this.props.isLoggedIn ? (
           <>
             {/* <p>username: {this.props.user.username}</p> */}
@@ -17,7 +17,7 @@ class Navbar extends Component {
             <Link to='/signup'>Signup</Link> */}
           </>
         )}
-      </div>
+      </nav>
     )
   }
 }

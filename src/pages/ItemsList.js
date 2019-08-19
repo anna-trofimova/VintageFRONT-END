@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import itemService from '../services/items-service';
-import ListItem from "./ListItem"
+import ListItem from "../components/ListItem"
 
 class ItemsList extends Component {
   state = {
@@ -29,8 +29,7 @@ class ItemsList extends Component {
       <div>
         <h1>ITEMLS LIST</h1>
         {!loading && listOfItems.map(item => 
-        <ListItem item={item}/>)
-        }
+        <ListItem item={item}/>)}
         {/* ^^ !loading && !showItem .. map and stuff */}
         {/* show Item and <ItemDetail item={this.state.item}> */}
       </div>

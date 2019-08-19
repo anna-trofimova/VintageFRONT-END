@@ -33,6 +33,15 @@
   }
 }
 
+.nav {
+  height: 45px;
+  background-color: #1818f19e;
+}
+
+.nav p {
+  margin: 0;
+}
+
 .container {
   margin: 0 auto;
   max-width: 112.0rem;
@@ -42,6 +51,7 @@
 }
 .auth {
 background-image: url('./images/back3.jpg');
+backdrop-filter: 10px;
 background-position: center;
 background-size: cover;
 max-width: 112.0rem;
@@ -68,19 +78,32 @@ height: 100vh;
 }
 .first-forms input{
   background-color: #f8f8ffb8;
-  width: 50%;
+  /* background-color: #000000ba; */
+  width: 65%;
   border-radius: 9px;
   height: 30px;
   border-color: transparent;
+  color: black;
 }
 
 .first-forms button {
   font-size: 17px;
-  background: #f8f8ffb8;
+  background: black;
   padding: 4px;
   margin: 10px;
   border-radius: 13px;
-  color: #12b719;
+  color: white;
+  border-color: black;
 
+}
+
+.firstButton{
+  display: grid;
+  padding: 7px;
+  background-color: #f8f8ffb8;
+  color: black;
+  border-radius: 50px;
+  margin-right: 13vh;
+  margin-left: 17px;
 }
 /*----------pages---------*/

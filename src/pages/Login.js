@@ -34,10 +34,10 @@ class Login extends Component {
           <input id='username' type='text' name='username' value={username} onChange={this.handleChange}/>
           <label htmlFor='password'>Password:</label>
           <input id='password' type='password' name='password' value={password} onChange={this.handleChange} />
-          <button type='submit' value='Login'>Login</button>>
+          <button type='submit' value='Login'>Login</button>
         </form>
 
-        <p>You don't have an accout yet?
+        <p className='firstButton'>You don't have an accout yet?
             <Link to={'/signup'}> Signup</Link>
         </p>
       </div>

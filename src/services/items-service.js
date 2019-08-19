@@ -13,6 +13,11 @@ class ItemsService {
       .then(({ data }) => data);
   }
 
+  itemDetails(id) {
+    return this.auth.get(`/items/${id}/details`)
+      .then(({ data }) => data);
+  }
+
   createItem(createItem) {
     return this.auth.post('/items/create', createItem)
     .then(({ data }) => data);
