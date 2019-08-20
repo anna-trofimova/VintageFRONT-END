@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import myPageService from "../services/my-page-service";
 import {Redirect} from "react-router-dom";
+import FileComponent from '../components/FileComponent';
 
 
 class EditMyPage extends Component {
@@ -8,16 +9,23 @@ class EditMyPage extends Component {
     username: "",
     email: "",
     phone: "",
-    img: "",
-    redirect: false
+    redirect: false,
+    imageUrl: "",
   };
+
+  getImage = (imageUrl) => {
+
+    this.setState({
+      imageUrl,
+    })
+  }
 
   componentDidMount() {
     myPageService
       .myPage()
       .then(user => {
-        const {username, email, phone, img} = user;
-        this.setState({username, email, phone, img});
+        const {username, email, phone, imageUrl} = user;
+        this.setState({username, email, phone, imageUrl});
       })
       .catch(error => console.log(error));
   }
@@ -28,18 +36,21 @@ class EditMyPage extends Component {
     this.setState({[name]: value});
   }
   handleSubmit = (event) => {
+    console.log(event)
+    
     //prevent the form default by using the event
     // destructure the state into an object
 
     event.preventDefault();
-    const { username, email, phone, img} = this.state
+    const { username, email, phone, imageUrl} = this.state
+
     
     //take the id from the router -> it lives in props.match
     const {id} = this.props.match.params
  
     // use the myPageService to call a put to the backend, send the id and the updated state data
     myPageService
-    .editMyPage(id,{username,email,phone,img})
+    .editMyPage(id,{username,email,phone,imageUrl})
     .then(user => {
       console.log(user)
       this.setState({
@@ -62,8 +73,7 @@ class EditMyPage extends Component {
           <input id='email' type='email' name='email' value={this.state.email} onChange={this.handleChange} />
           <label htmlFor='phone'>Phone:</label>
           <input id='phone' type='number' name='phone' value={this.state.phone} onChange={this.handleChange} />
-          <label htmlFor='img'>Image:</label>
-          <input id='img' type='text' name='img' value={this.state.img} onChange={this.handleChange} />
+          <FileComponent getImage={this.getImage}/>
           <button type='submit'>save</button>
         </form>
          { this.state.redirect ?  <Redirect to='/myPage' /> : null } 

@@ -35,11 +35,20 @@
 
 .nav {
   height: 45px;
-  background-color: #1818f19e;
+  /* background-color: #1818f19e; */
+  background-color: #d5d5f7;
+  border-bottom: 1px solid black;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 4px;
 }
 
 .nav p {
   margin: 0;
+}
+.nav img{
+  height: 40px;
 }
 
 .container {
@@ -107,3 +116,18 @@ height: 100vh;
   margin-left: 17px;
 }
 /*----------pages---------*/
+.myPage-container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.my-information {
+
+}
+
+.myPage-links {
+  flex-direction: column;
+  display: flex;
+  padding: 4px;
+}

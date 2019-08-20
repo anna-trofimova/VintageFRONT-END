@@ -8,6 +8,7 @@ class AuthProvider extends Component {
     isLoggedIn: false,
     user: {},
     isLoading: true,
+    shoppingCart: [],
   }
 
   userSignUp = (user) => {
@@ -40,6 +41,10 @@ class AuthProvider extends Component {
     })
   }
 
+  addToCart = (item) =>{
+    const {shoppingCart} = this.state;
+    this.setState({shoppingCart: [...shoppingCart, item]})
+  }
   componentDidMount() {
     authService.me()
     .then(user => {
@@ -69,7 +74,9 @@ class AuthProvider extends Component {
                 isLoggedIn,
                 login: this.userLogin,
                 signup: this.userSignUp,
-                logout: this.userLogout
+                logout: this.userLogout,
+                cart: this.state.shoppingCart,
+                addToCart: this.addToCart,
               }
             }>
               {this.props.children}

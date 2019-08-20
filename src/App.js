@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar.js';
 import PrivateRoute from './components/PrivateRoute.js';
@@ -17,6 +17,7 @@ import ItemDetails from './pages/ItemDetails';
 import AuthProvider from './contexts/auth-context.js';
 
 import firebase from "firebase";
+import PurchaseList from './pages/PurchaseList.js';
  
 const config = {
   apiKey: "AIzaSyA2cmWD0gA6ZGrioN2btvaudloMA9l0UJY",
@@ -41,7 +42,8 @@ class App extends Component {
               <PrivateRoute path='/myPage/:id/edit' exact component={EditMyPage} />
               <PrivateRoute  path='/items' exact component={ItemsList} />
               <PrivateRoute path='/items/create' exact component={CreateItem} />
-              <PrivateRoute path='/items/:id' exact component={ItemDetails} />
+              <PrivateRoute path='/purchases' exact component={PurchaseList} />
+              <Route component={Login} />
             </Switch>
           </div>
         </AuthProvider>

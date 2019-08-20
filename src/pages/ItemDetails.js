@@ -20,7 +20,6 @@ export default class ItemDetails extends Component {
     .catch((error)=>console.log(error))
   }
   render() {
-    console.log('imhere', this.state.item)
     return (
       <div>
         <h1>ITEM DETAILS PAGE</h1>

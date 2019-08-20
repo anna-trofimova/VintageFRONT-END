@@ -8,6 +8,7 @@ class MyPage extends Component {
     user: {},
     loading: true,
     userId: '',
+  
   }
   
   componentDidMount(){
@@ -25,14 +26,19 @@ class MyPage extends Component {
     const { user, loading,  userId} = this.state;
     console.log(userId)
     return (
-      <div>
-        {!loading && <><p>HEY {user.username}</p>
-        {user.phone ? <p>{user.phone}</p> : <p>no</p>}
-        {user.email ? <p>{user.email}</p> : <p>no</p>}
-        {user.img ? <p>{user.img}</p> : <p>no</p>}
-        </>}
+      <div className='myPage-container'>
+        {!loading && 
+        <div class='my-information'> 
+        <p>Hey {user.username} !</p>
+        {user.phone ? <p>Phone: {user.phone}</p> : <p>no</p>}
+        {user.email ? <p>Email: {user.email}</p> : <p>no</p>}
+      
+        {user.imageUrl ? <img src={user.imageUrl} alt="some stuff to stop error"/>: <p>no</p>}
+        </div>}
+      <div className='myPage-links'> 
         <Link to={`/myPage/${userId}/edit`}>Edit</Link>
         <Link to={`/items/create`}>Create a post</Link>
+      </div>
       </div>
     );
   }
