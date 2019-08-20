@@ -26,19 +26,28 @@ class PurchaseList extends Component {
 //another method to take you back to all items
   render() {
     console.log("here")
-    const {loading, purchaseList, cart} = this.state;
+    const {loading, purchaseList} = this.state;
     return (
       <div>
         <h1>My Cart</h1>
         {!loading && this.props.cart.map(cart=>{
-          const {price} = cart.itemFound
+          const {price, name, imageUrl} = cart.itemFound
+          const {username, email, phone} = cart.owner
           console.log(cart.owner)
-               return <p>price: {price}</p> 
+               return (
+                 <>
+                   <h3>Product's information</h3>
+                   <img src={imageUrl} alt="no error"/>
+                   <p>name: {name}</p>
+                   <p>price: {price}</p>
+                   <h3>Owner's contacts</h3>
+                   <p>Name: {username}</p>
+                   <p>Phone: {phone}</p>
+                   <p>Email: {email}</p>
+                 </>
+               )
         })
       }
-        <h1>ITEMLS LIST</h1>
-        {!loading && purchaseList.map(item => 
-        <p>{item.price}</p>)}
       </div>
     )
   }

@@ -6,10 +6,11 @@ import withAuth from '../components/withAuth';
 
 class ListItem extends Component {
 
-  handleChange = (id) => {
+  handleClick = (id) => {
     purchaseService.buyItem(id)
     .then((data) => {
       this.props.addToCart(data)
+      this.props.updateList();
     })
   }
   render(){
@@ -18,7 +19,7 @@ class ListItem extends Component {
     return (
       <>
       <Link to={{
-          pathname: `/items/${item._id}`,
+          pathname: `/items/${item._id}/details`,
           state: {
             id: item._id
           }
@@ -27,13 +28,13 @@ class ListItem extends Component {
         <div key={item._id}>
          <p>{item.name}</p>
          <p>{item.price}</p>
-         <p>{item.img}</p>
+         <img src={item.img} alt="some stuff to stop error" width='50px'/>
          
         </div>
         
       </Link>
       <button onClick={() => {
-        this.handleChange(item._id)
+        this.handleClick(item._id)
         }}>BUY</button>
       </>
     )

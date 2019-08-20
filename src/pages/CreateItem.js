@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import itemService from '../services/items-service';
 import {Redirect} from "react-router-dom";
+import FileComponent from '../components/FileComponent';
 
 class CreateItem extends Component {
   state = {
@@ -13,10 +14,18 @@ class CreateItem extends Component {
     redirect: false
   }
 
+
+  getImage = (img) => {
+    this.setState({
+      img,
+    })
+  };
+
+
   handleChange = (event) => {  
     const {name, value} = event.target;
     this.setState({[name]: value});
-  }
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -29,7 +38,8 @@ class CreateItem extends Component {
   })
     .catch((error)=>
     console.log(error))
-  }
+  };
+
   render() {
     return (
       <div>
@@ -42,6 +52,7 @@ class CreateItem extends Component {
           <input id='description' type='text' name='description' value={this.state.description} onChange={this.handleChange}  />
           <label htmlFor='year'>year:</label>
           <input id='year' type='number' name='year' value={this.state.year}  onChange={this.handleChange}/>
+          <FileComponent getImage={this.getImage}/>
           <button type='submit'>save</button>
         </form>
         { this.state.redirect ?  <Redirect to='/items' /> : null } 

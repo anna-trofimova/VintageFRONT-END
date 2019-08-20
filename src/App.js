@@ -42,6 +42,7 @@ class App extends Component {
               <PrivateRoute path='/myPage/:id/edit' exact component={EditMyPage} />
               <PrivateRoute  path='/items' exact component={ItemsList} />
               <PrivateRoute path='/items/create' exact component={CreateItem} />
+              <PrivateRoute path='/items/:id/details' exact component={ItemDetails} />
               <PrivateRoute path='/purchases' exact component={PurchaseList} />
               <Route component={Login} />
             </Switch>

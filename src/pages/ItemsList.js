@@ -12,6 +12,10 @@ class ItemsList extends Component {
   }
 
   componentDidMount(){
+    this.getAllItems();
+  }
+
+  getAllItems = () => {
     itemService.items()
       .then((listOfItems)=>{
         this.setState({
@@ -21,6 +25,7 @@ class ItemsList extends Component {
     })
       .catch((error)=>console.log(error))
   }
+
 //onClick that takes the data from item and sets the state of item and showItem
 
 //another method to take you back to all items
@@ -28,9 +33,14 @@ class ItemsList extends Component {
     const {loading, listOfItems} = this.state;
     return (
       <div>
-        <h1>ITEMLS LIST</h1>
-        {!loading && listOfItems.map(item => 
-        <ListItem item={item}/>)}
+        <h1>ITEMS LIST</h1>
+        {!loading && listOfItems.map(item => {
+
+          if (!item.isBought) {
+            return (<ListItem updateList={this.getAllItems} item={item}/>)
+          }
+        })
+        }
       </div>
     )
   }

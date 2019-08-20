@@ -20,10 +20,15 @@ export default class ItemDetails extends Component {
     .catch((error)=>console.log(error))
   }
   render() {
+    const {item} = this.state
     return (
       <div>
-        <h1>ITEM DETAILS PAGE</h1>
-        {!this.state.loading && <p>{this.state.item.name}</p>}
+        <h2>ITEM DETAILS PAGE</h2>
+        {!this.state.loading && 
+        <>
+        <p>{item.name}</p>
+        <img src={item.img} alt="some stuff to stop error" width='50px'/>
+        </>}
       </div>
     )
   }
