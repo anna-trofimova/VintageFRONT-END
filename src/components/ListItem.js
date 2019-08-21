@@ -30,38 +30,24 @@ class ListItem extends Component {
     const {item} = this.props
     return(
       <>
-        {this.state.myItems.map((item) => {
-          return (
-            <div>
-              <Link className='items-link' 
-            to={{
-              pathname: `/items/${item._id}/details`,
-              state: {
-                id: item._id
-              }
-            }} >
-               <div key={item._id}>
-                 <p>{item.name}</p>
-                 <p>{item.price} $</p>
-                <ul>
-                  {item.img.map(pic => {
-                   return(
-                     <li>
-                      <img src={pic} alt="some stuff to stop error" width='300px'/>
-                    </li>              
-                )
-              })}
-            </ul>
-          </div>
-              </Link>
-              {!this.state.myItems.includes(item._id) ? 
-              <button  onClick={() => {
-                this.handleClick(item._id)
-              }}>BUY</button> : null}
+      <Link className='items-link' to={{
+        pathname: `/items/${item._id}/details`,
+        state: {
+          id: item._id
+        }
+      }} 
+        >
+          <div key={item._id}>
+          <img src={item.img} alt="some stuff to stop error" width='300px'/>
+          <p>{item.name}</p>
+          <p>{item.price} $</p>
+          </div>     
+      </Link>
+      {!this.state.myItems.includes(item._id)  ?
+      <button onClick={() => {
+        this.handleClick(item._id)
+      }}>BUY</button> : null}
 
-            </div>
-          )
-        })}
       </>
     )
   }

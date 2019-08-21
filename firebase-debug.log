@@ -1,0 +1,80 @@
+[debug] [2019-08-21T15:13:55.188Z] ----------------------------------------------------------------------
+[debug] [2019-08-21T15:13:55.190Z] Command:       /Users/annatrofimova/.nvm/versions/node/v12.6.0/bin/node /Users/annatrofimova/.nvm/versions/node/v12.6.0/bin/firebase deploy
+[debug] [2019-08-21T15:13:55.190Z] CLI Version:   7.2.2
+[debug] [2019-08-21T15:13:55.190Z] Platform:      darwin
+[debug] [2019-08-21T15:13:55.191Z] Node Version:  v12.6.0
+[debug] [2019-08-21T15:13:55.192Z] Time:          Wed Aug 21 2019 17:13:55 GMT+0200 (GMT+02:00)
+[debug] [2019-08-21T15:13:55.192Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-21T15:13:55.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-21T15:13:55.201Z] > authorizing via signed-in user
+[debug] [2019-08-21T15:13:55.201Z] [iam] checking project vintage-second-hand-front for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-08-21T15:13:55.202Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-21T15:13:55.202Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-21T15:13:57.391Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:13:57.407Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/vintage-second-hand-front:testIamPermissions  
+
+[debug] [2019-08-21T15:13:58.406Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:13:58.407Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/vintage-second-hand-front  
+ 
+[debug] [2019-08-21T15:13:58.657Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'vintage-second-hand-front'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-08-21T15:13:58.661Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/vintage-second-hand-front/versions  
+
+[debug] [2019-08-21T15:14:02.809Z] <<< HTTP RESPONSE 500
+[debug] [2019-08-21T15:14:02.809Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-08-21T15:14:02.903Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 21 Aug 2019 15:14:02 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,43,39\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/vintage-second-hand-front/versions",
+        "path": "/v1beta1/sites/vintage-second-hand-front/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/vintage-second-hand-front/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
