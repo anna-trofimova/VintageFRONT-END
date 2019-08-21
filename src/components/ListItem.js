@@ -12,7 +12,6 @@ class ListItem extends Component {
   handleClick = (id) => {
     purchaseService.buyItem(id)
     .then((data) => {
-      console.log(data)
       this.props.addToCart(data)
       this.props.updateList();
       const newArray = [...this.state.myItems]
@@ -29,7 +28,7 @@ class ListItem extends Component {
     const {item} = this.props;
     return (
       <>
-      <Link to={{
+      <Link className='items-link' to={{
           pathname: `/items/${item._id}/details`,
           state: {
             id: item._id
@@ -37,9 +36,9 @@ class ListItem extends Component {
         }}
       >
         <div key={item._id}>
+         <img src={item.img} alt="some stuff to stop error" width='300px'/>
          <p>{item.name}</p>
-         <p>{item.price}</p>
-         <img src={item.img} alt="some stuff to stop error" width='50px'/>
+         <p>{item.price} $</p>
          
         </div>
         

@@ -21,9 +21,9 @@ class PurchaseList extends Component {
 
   render() {
     const {cart} = this.state;
-    console.log(cart)
+    // console.log(cart)
     return (
-      <div>
+      <div className='my-cart'>
         <h1>My Cart</h1>
         {cart.myPurchase.length > 0 && cart.myPurchase.map(cart=>{
           const {price, name, img} = cart.itemId
@@ -31,9 +31,9 @@ class PurchaseList extends Component {
                return (
                  <section key={cart.itemId._id}>
                    <h3>Product's information</h3>
-                   <img src={img} alt="no error"/>
-                   <p>name: {name}</p>
-                   <p>price: {price}</p>
+                   <img src={img} alt="no error" width='300px'/>
+                   <p>Name: {name}</p>
+                   <p>Price: {price}$</p>
                    <h3>Owner's contacts</h3>
                    <p>Name: {username}</p>
                    <p>Phone: {phone}</p>

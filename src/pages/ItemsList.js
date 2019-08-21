@@ -32,7 +32,7 @@ class ItemsList extends Component {
   render() {
     const {loading, listOfItems} = this.state;
     return (
-      <div>
+      <div className='itemsPage'>
         <h1>ITEMS LIST</h1>
         {!loading && listOfItems.map(item => {
 

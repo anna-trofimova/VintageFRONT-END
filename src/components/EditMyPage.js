@@ -14,7 +14,6 @@ class EditMyPage extends Component {
   };
 
   getImage = (imageUrl) => {
-
     this.setState({
       imageUrl,
     })
@@ -65,7 +64,7 @@ class EditMyPage extends Component {
     console.log(this.state)
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='createItem'>
           <label htmlFor='username' >Username:</label>
           <input id='username' type='text' name='username' value={this.state.username} onChange={this.handleChange}/>
           <label htmlFor='email'>Email:</label>

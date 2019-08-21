@@ -35,7 +35,7 @@ class FileUploadComponent extends Component {
     const {isUploading, progress, avatarURL} = this.state;
     return (
       <div>
-        <form>
+        <form className='addImage'>
           <label>Image:</label>
           {isUploading && <p>Progress: {progress}</p>}
           {avatarURL && <img src={avatarURL} alt='name' width='100px'/>}

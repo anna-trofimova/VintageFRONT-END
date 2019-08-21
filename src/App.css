@@ -1,5 +1,6 @@
-.App {
+/* .App {
   text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
 }
 
 .App-logo {
@@ -21,8 +22,10 @@
 
 .App-link {
   color: #61dafb;
+} */
+body {
+  font-family: "Lucida Console", Monaco, monospace;
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -37,7 +40,6 @@
   height: 45px;
   /* background-color: #1818f19e; */
   background-color: #d5d5f7;
-  border-bottom: 1px solid black;
   width:100%;
   display: flex;
   justify-content: space-around;
@@ -88,7 +90,7 @@ height: 100vh;
 .first-forms input{
   background-color: #f8f8ffb8;
   /* background-color: #000000ba; */
-  width: 65%;
+  width: 68%;
   border-radius: 9px;
   height: 30px;
   border-color: transparent;
@@ -108,15 +110,21 @@ height: 100vh;
 
 .firstButton{
   display: grid;
-  padding: 7px;
+  padding: 10px;
   background-color: #f8f8ffb8;
   color: black;
   border-radius: 50px;
   margin-right: 13vh;
   margin-left: 17px;
 }
-/*----------pages---------*/
-.myPage-container { 
+                 /*-------------------------pages---------------------------*/
+
+.myPage-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.myInfo-container { 
   display: flex;
   flex-direction: row;
   border: white;
@@ -129,6 +137,7 @@ height: 100vh;
 .my-information {
   padding: 10px;
 }
+
 .my-information img {
   border-radius: 6px;
 }
@@ -136,10 +145,68 @@ height: 100vh;
 .myPage-links {
   flex-direction: column;
   display: flex;
-  padding: 4px;
+  padding-top: 12px;
+  padding-left: 60px;
 }
 
 .linkMypage {
   text-decoration: none;
-  color: #5083df;;
+  color: #5083df;
+  padding: 2px;
+}
+
+.createItem {
+  display: flex;
+  flex-direction: column;
+  font-size: 23px;
+  margin: 15px;
+}
+
+.createItem input {
+  border: 1px solid #0000002b;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 4px;
+}
+
+.createItem button {
+  border: 1px solid #f1e9e900;
+  border-radius: 25px;
+  background-color: #9292cc;
+  width: 60px;
+  padding: 7px;
+  margin-left: 140px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+ #description {
+  border: 1px solid #0000002b;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 4px;
+  height: 100px;
+}
+
+.addImage {
+
+}
+
+.myPost-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemsPage {
+  text-align: center;
+}
+
+.items-link {
+  text-decoration: none;
+}
+
+.my-cart {
+  text-align: center;
 }

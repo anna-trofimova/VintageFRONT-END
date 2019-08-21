@@ -47,20 +47,19 @@ class CreateItem extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='name' >name:</label>
+        <form onSubmit={this.handleSubmit} className='createItem'>
+          <label htmlFor='name' >Name:</label>
           <input id='name' type='text' name='name' value={this.state.name} onChange={this.handleChange}/>
-          <label htmlFor='price'>price:</label>
+          <label htmlFor='price'>Price:</label>
           <input id='price' type='number' name='price' value={this.state.price} onChange={this.handleChange} />
-          <label htmlFor='description'>description:</label>
-          <input id='description' type='text' name='description' value={this.state.description} onChange={this.handleChange}  />
-          <label htmlFor='year'>year:</label>
+          <label htmlFor='year'>Year:</label>
           <input id='year' type='number' name='year' value={this.state.year}  onChange={this.handleChange}/>
-          <FileComponent getImage={this.getImage}/>
+          <label htmlFor='description'>Description:</label>
+          <textarea id='description' rows='4' name='description' value={`${this.state.description}`} onChange={this.handleChange}  />
+          <FileComponent getImage={this.getImage} />
           <button type='submit'>save</button>
         </form>
-        { this.state.redirect ?  <Redirect to='/items' /> : null } 
-        
+        { this.state.redirect ?  <Redirect to='/items' /> : null }       
       </div>
     )
   }
