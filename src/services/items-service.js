@@ -13,6 +13,11 @@ class ItemsService {
       .then(({ data }) => data);
   }
 
+  myItems() {
+    return this.auth.get('/items/nyItems')
+    .then(({ data }) => data);
+  }
+
   itemDetails(id) {
     return this.auth.get(`/items/${id}/details`)
       .then(({ data }) => data);

@@ -119,15 +119,27 @@ height: 100vh;
 .myPage-container { 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  border: white;
+  border-radius: 14px;
+  background-color: #f0f8ff70;
+  margin: 22px;
+  justify-content: space-between
 }
 
 .my-information {
-
+  padding: 10px;
+}
+.my-information img {
+  border-radius: 6px;
 }
 
 .myPage-links {
   flex-direction: column;
   display: flex;
   padding: 4px;
+}
+
+.linkMypage {
+  text-decoration: none;
+  color: #5083df;;
 }

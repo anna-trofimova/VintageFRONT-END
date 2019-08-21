@@ -45,8 +45,9 @@ class AuthProvider extends Component {
     const {shoppingCart} = this.state;
     this.setState({shoppingCart: [...shoppingCart, item]})
   }
-  componentDidMount() {
-    authService.me()
+
+  getMe = () => {
+    return authService.me()
     .then(user => {
       this.setState({
         user,
@@ -61,6 +62,10 @@ class AuthProvider extends Component {
         isLoading: false,
       })
     })
+  }
+  
+  componentDidMount() {
+    this.getMe()
   }
 
   render() {
@@ -77,6 +82,7 @@ class AuthProvider extends Component {
                 logout: this.userLogout,
                 cart: this.state.shoppingCart,
                 addToCart: this.addToCart,
+                getMe: this.getMe,
               }
             }>
               {this.props.children}

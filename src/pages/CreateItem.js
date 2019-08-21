@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import itemService from '../services/items-service';
 import {Redirect} from "react-router-dom";
 import FileComponent from '../components/FileComponent';
+import withAuth from '../components/withAuth';
 
 class CreateItem extends Component {
   state = {
@@ -11,7 +12,8 @@ class CreateItem extends Component {
     description:'',
     category:[],
     year:'',
-    redirect: false
+    redirect: false,
+    createdItem: {}
   }
 
 
@@ -31,10 +33,12 @@ class CreateItem extends Component {
     event.preventDefault();
     const {name, price, img, description, category, year} = this.state
     itemService.createItem({name, price, img, description, category, year})
-    .then(()=>{
+    .then((r)=>{
+      console.log(r)
       this.setState({
-        redirect:true
+        redirect: true,
       })
+      this.props.user.myItems.push(r._id)
   })
     .catch((error)=>
     console.log(error))
@@ -62,4 +66,4 @@ class CreateItem extends Component {
   }
 }
 
-export default CreateItem;
+export default withAuth(CreateItem);

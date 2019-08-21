@@ -37,7 +37,7 @@ class ItemsList extends Component {
         {!loading && listOfItems.map(item => {
 
           if (!item.isBought) {
-            return (<ListItem updateList={this.getAllItems} item={item}/>)
+            return (<ListItem key={item._id} updateList={this.getAllItems} item={item}/>)
           }
         })
         }

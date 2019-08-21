@@ -36,9 +36,9 @@ class FileUploadComponent extends Component {
     return (
       <div>
         <form>
-          <label>Avatar:</label>
+          <label>Image:</label>
           {isUploading && <p>Progress: {progress}</p>}
-          {avatarURL && <img src={avatarURL} alt='name'/>}
+          {avatarURL && <img src={avatarURL} alt='name' width='100px'/>}
           <FileUploader
             accept="image/*"
             name="avatar"

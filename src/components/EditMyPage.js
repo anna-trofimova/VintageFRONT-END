@@ -36,7 +36,6 @@ class EditMyPage extends Component {
     this.setState({[name]: value});
   }
   handleSubmit = (event) => {
-    console.log(event)
     
     //prevent the form default by using the event
     // destructure the state into an object

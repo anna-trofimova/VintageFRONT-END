@@ -5,17 +5,28 @@ import purchaseService from '../services/purchase-service';
 import withAuth from '../components/withAuth';
 
 class ListItem extends Component {
+  state = {
+    myItems: this.props.user.myItems
+  }
 
   handleClick = (id) => {
     purchaseService.buyItem(id)
     .then((data) => {
+      console.log(data)
       this.props.addToCart(data)
       this.props.updateList();
+      const newArray = [...this.state.myItems]
+      newArray.push(data)
+      this.setState({
+        myItems: newArray
+      })
     })
   }
+
+
+
   render(){
     const {item} = this.props;
-    console.log(this.props)
     return (
       <>
       <Link to={{
@@ -33,9 +44,10 @@ class ListItem extends Component {
         </div>
         
       </Link>
+      {!this.state.myItems.includes(item._id)  ?
       <button onClick={() => {
         this.handleClick(item._id)
-        }}>BUY</button>
+        }}>BUY</button> : null}
       </>
     )
   }
