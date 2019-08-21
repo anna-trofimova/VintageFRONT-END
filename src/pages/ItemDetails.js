@@ -22,13 +22,16 @@ export default class ItemDetails extends Component {
   render() {
     const {item} = this.state
     return (
-      <div>
-        <h2>ITEM DETAILS PAGE</h2>
+      <div className='details-page-container'>
+        <h1>ITEM DETAILS PAGE</h1>
         {!this.state.loading && 
-        <>
-        <p>{item.name}</p>
-        <img src={item.img} alt="some stuff to stop error" width='50px'/>
-        </>}
+        <div className='details-page'>
+        <img src={item.img} alt="some stuff to stop error" width='300px'/>
+        <h3>{item.name}</h3>
+        <p>{item.price}$</p>
+        <p>{item.year}</p>
+        <p>{item.description}</p>       
+        </div>}
       </div>
     )
   }

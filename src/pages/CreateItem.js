@@ -3,12 +3,13 @@ import itemService from '../services/items-service';
 import {Redirect} from "react-router-dom";
 import FileComponent from '../components/FileComponent';
 import withAuth from '../components/withAuth';
+import image from 'react-firebase-file-uploader/lib/utils/image';
 
 class CreateItem extends Component {
   state = {
     name:'',
     price: 0,
-    img:'',
+    img:[],
     description:'',
     category:[],
     year:'',
@@ -17,7 +18,9 @@ class CreateItem extends Component {
   }
 
 
-  getImage = (img) => {
+  getImage = (url) => {
+    const {img} = this.state
+    img.push(url)
     this.setState({
       img,
     })
@@ -47,6 +50,7 @@ class CreateItem extends Component {
   render() {
     return (
       <div>
+
         <form onSubmit={this.handleSubmit} className='createItem'>
           <label htmlFor='name' >Name:</label>
           <input id='name' type='text' name='name' value={this.state.name} onChange={this.handleChange}/>
@@ -56,6 +60,7 @@ class CreateItem extends Component {
           <input id='year' type='number' name='year' value={this.state.year}  onChange={this.handleChange}/>
           <label htmlFor='description'>Description:</label>
           <textarea id='description' rows='4' name='description' value={`${this.state.description}`} onChange={this.handleChange}  />
+          
           <FileComponent getImage={this.getImage} />
           <button type='submit'>save</button>
         </form>

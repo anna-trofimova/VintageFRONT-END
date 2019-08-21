@@ -5,31 +5,29 @@ class PurchaseList extends Component {
   state = {
     purchaseList:[],
     loading: true,
-    cart: {
     myPurchase: [],
-    }
   }
   componentDidMount() {
     this.props.getMe()
     .then(() => {
       const cart = this.props.user
-      this.setState({cart:{
+      this.setState({
         myPurchase: cart.myPurchase,
-      }})
+      })
     })
   }
 
   render() {
-    const {cart} = this.state;
-    // console.log(cart)
+    const {myPurchase} = this.state;
+    console.log(myPurchase)
     return (
       <div className='my-cart'>
         <h1>My Cart</h1>
-        {cart.myPurchase.length > 0 && cart.myPurchase.map(cart=>{
-          const {price, name, img} = cart.itemId
-          const {username, email, phone} = cart.ownerId
+        {myPurchase.length > 0 ? myPurchase.map(onePurchase=>{
+          const {price, name, img} = onePurchase
+          const {username, email, phone} = onePurchase.ownerId
                return (
-                 <section key={cart.itemId._id}>
+                 <section key={onePurchase.itemId._id}>
                    <h3>Product's information</h3>
                    <img src={img} alt="no error" width='300px'/>
                    <p>Name: {name}</p>
@@ -41,7 +39,7 @@ class PurchaseList extends Component {
                  </section>
                )
         })
-      }
+      : null}
       </div>
     )
   }

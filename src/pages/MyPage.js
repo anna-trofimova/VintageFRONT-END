@@ -1,13 +1,14 @@
 import React, { Component} from "react";
 import {Link } from 'react-router-dom';
 import myPageService from "../services/my-page-service";
+import itemService from "../services/items-service";
+import withAuth from '../components/withAuth'
 
 class MyPage extends Component {
   state = {
     user: {},
     loading: true,
     userId: '',
-    listOfItem:[] 
   } 
   
   componentDidMount(){
@@ -19,6 +20,18 @@ class MyPage extends Component {
       })
       })
       .catch((error)=>console.log(error))
+  }
+
+  handleDelete = (id) =>{
+    itemService.deleteItem(id, this.props.user._id)
+    .then(() => {
+      myPageService.myPage()
+      .then(user => {
+        this.setState({
+          user
+        })
+      })
+    })
   }
 
   render() {
@@ -33,13 +46,6 @@ class MyPage extends Component {
         <p>Hey {user.username} !</p>
         {user.phone ? <p>Phone: {user.phone}</p> : <p>Phone: no</p>}
         {user.email ? <p>Email: {user.email}</p> : <p>Email: no</p>}
-        {/* {user.myItems.length > 0 ? user.myItems.map((item, index) => {
-          return (
-            <div key={index}>
-              <p>{item.img}</p>
-              <h3>{item.name}</h3>
-            </div>)
-        }) : null} */}
         </div>
       }
 
@@ -57,6 +63,7 @@ class MyPage extends Component {
             <div key={index} className='myPost-info'>
               <img src={item.img} alt="some stuff to stop error" width='300px'/>
               <h3>{item.name}</h3>
+              <button onClick={() => this.handleDelete(item._id)}>DELETE</button>
             </div>)  
         }) : null}
       </>
@@ -66,4 +73,4 @@ class MyPage extends Component {
     );
   }
 }
-export default MyPage;
+export default withAuth(MyPage);

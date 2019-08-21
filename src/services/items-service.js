@@ -33,9 +33,9 @@ class ItemsService {
     .then(({ data }) => data);
   }
 
-  deleteItem(id) {
-    return this.auth.post(`/items/${id}/delete`)
-    .then(({ data }) => data);
+  deleteItem(id, idUser) {
+    return this.auth.post(`/items/${id}/delete`, {idUser})
+    .then(response => response);
   }
 
   
