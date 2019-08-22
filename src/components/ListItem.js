@@ -9,9 +9,7 @@ class ListItem extends Component {
     myItems: this.props.user.myItems
   }
 
-  componentDidMount(){
-    console.log(this.props.user);
-  }
+
 
   handleClick = (id) => {
     purchaseService.buyItem(id)
