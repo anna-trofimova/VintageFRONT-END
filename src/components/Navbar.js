@@ -7,9 +7,9 @@ class Navbar extends Component {
     if(this.props.isLoggedIn) {
       return (
         <nav className='nav'>
-          <p onClick={this.props.logout}><img src="/img/icons8-logout-rounded-left-100.png" alt='cart-icon'/></p>
-          <Link to='/myPage'><img src="/img/icons8-male-user-100.png" alt='cart-icon'/></Link>
-          <Link to='/items'><img src="/img/icons8-clothes-100.png" alt='cart-icon'/></Link>
+          <p onClick={this.props.logout}><img src="/img/icons8-logout-rounded-left-100.png" alt='logout-icon'/></p>
+          <Link to='/myPage'><img src="/img/icons8-male-user-100.png" alt='user-icon'/></Link>
+          <Link to='/items'><img src="/img/icons8-clothes-100.png" alt='clothes-icon'/></Link>
           <Link to='/purchases'><img src="/img/icons8-shopping-cart-100.png" alt='cart-icon'/></Link>
         </nav>
       )
@@ -22,14 +22,3 @@ class Navbar extends Component {
 export default withAuth(Navbar);
 
 
-
-        // {/* {this.props.isLoggedIn ? ( */}
-        //   <>
-        //     {/* <p>username: {this.props.user.username}</p> */}
-        //     <p onClick={this.props.logout}>Logout</p>
-        //   </>
-        // // ) : (
-        // //   <>
-        //     {/* <Link to='/login'>Login</Link>
-        //     <Link to='/signup'>Signup</Link> */}
-        //   {/* </> */}

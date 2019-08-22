@@ -50,7 +50,6 @@ class EditMyPage extends Component {
     myPageService
     .editMyPage(id,{username,email,phone,imageUrl})
     .then(user => {
-      console.log(user)
       this.setState({
         redirect:true
       });
@@ -61,16 +60,15 @@ class EditMyPage extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <form onSubmit={this.handleSubmit} className='createItem'>
           <label htmlFor='username' >Username:</label>
-          <input id='username' type='text' name='username' value={this.state.username} onChange={this.handleChange}/>
+          <input id='username' type='text' name='username' value={this.state.username|| ""} onChange={this.handleChange}/>
           <label htmlFor='email'>Email:</label>
-          <input id='email' type='email' name='email' value={this.state.email} onChange={this.handleChange} />
+          <input id='email' type='email' name='email' value={this.state.email || ""} onChange={this.handleChange} />
           <label htmlFor='phone'>Phone:</label>
-          <input id='phone' type='number' name='phone' value={this.state.phone} onChange={this.handleChange} />
+          <input id='phone' type='number' name='phone' value={this.state.phone || ""} onChange={this.handleChange} />
           <FileComponent getImage={this.getImage}/>
           <button type='submit'>save</button>
         </form>

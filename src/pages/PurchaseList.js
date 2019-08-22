@@ -19,17 +19,17 @@ class PurchaseList extends Component {
 
   render() {
     const {myPurchase} = this.state;
-    console.log(myPurchase)
     return (
       <div className='my-cart'>
         <h1>My Cart</h1>
         {myPurchase.length > 0 ? myPurchase.map(onePurchase=>{
-          const {price, name, img} = onePurchase
+          const {price, name,} = onePurchase.itemId
+          const img = onePurchase.itemId.img[0];
           const {username, email, phone} = onePurchase.ownerId
                return (
                  <section key={onePurchase.itemId._id}>
                    <h3>Product's information</h3>
-                   <img src={img} alt="no error" width='300px'/>
+                   <img src={img} alt="purchase pic" width='300px'/>
                    <p>Name: {name}</p>
                    <p>Price: {price}$</p>
                    <h3>Owner's contacts</h3>

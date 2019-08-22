@@ -3,7 +3,7 @@ import itemService from '../services/items-service';
 import {Redirect} from "react-router-dom";
 import FileComponent from '../components/FileComponent';
 import withAuth from '../components/withAuth';
-import image from 'react-firebase-file-uploader/lib/utils/image';
+
 
 class CreateItem extends Component {
   state = {

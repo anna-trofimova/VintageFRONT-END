@@ -42,7 +42,7 @@ class MyPage extends Component {
         <div className='myInfo-container'>
         {!loading && 
         <div className='my-information'> 
-        {user.imageUrl ? <img src={user.imageUrl} alt="some stuff to stop error" width='120px'/>: <p>no</p>}
+        {user.imageUrl ? <img src={user.imageUrl} alt="profile img" width='120px'/>: <p>no</p>}
         <p>Hey {user.username} !</p>
         {user.phone ? <p>Phone: {user.phone}</p> : <p>Phone: no</p>}
         {user.email ? <p>Email: {user.email}</p> : <p>Email: no</p>}
@@ -61,7 +61,7 @@ class MyPage extends Component {
         {user.myItems.length > 0 ? user.myItems.map((item, index) => {
           return (
             <div key={index} className='myPost-info'>
-              <img src={item.img} alt="some stuff to stop error" width='300px'/>
+              <img src={item.img} alt="clothes pic" width='300px'/>
               <h3>{item.name}</h3>
               <button onClick={() => this.handleDelete(item._id)}>DELETE</button>
             </div>)  

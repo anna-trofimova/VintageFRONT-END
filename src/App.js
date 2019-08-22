@@ -13,6 +13,7 @@ import EditMyPage from './components/EditMyPage';
 import ItemsList from './pages/ItemsList';
 import CreateItem from './pages/CreateItem';
 import ItemDetails from './pages/ItemDetails';
+import NotFound from './pages/NotFound';
 
 import AuthProvider from './contexts/auth-context.js';
 
@@ -44,7 +45,7 @@ class App extends Component {
               <PrivateRoute path='/items/create' exact component={CreateItem} />
               <PrivateRoute path='/items/:id/details' exact component={ItemDetails} />
               <PrivateRoute path='/purchases' exact component={PurchaseList} />
-              <Route component={Login} />
+              <Route component={NotFound} />
             </Switch>
           </div>
         </AuthProvider>

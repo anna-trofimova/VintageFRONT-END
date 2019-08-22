@@ -26,7 +26,7 @@ export default class ItemDetails extends Component {
         <h1>ITEM DETAILS PAGE</h1>
         {!this.state.loading && 
         <div className='details-page'>
-        <img src={item.img} alt="some stuff to stop error" width='300px'/>
+        <img src={item.img} alt="clothes pic" width='300px'/> 
         <h3>{item.name}</h3>
         <p>{item.price}$</p>
         <p>{item.year}</p>

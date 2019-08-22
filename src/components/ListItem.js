@@ -38,7 +38,7 @@ class ListItem extends Component {
       }} 
         >
           <div key={item._id}>
-          <img src={item.img} alt="some stuff to stop error" width='300px'/>
+          <img src={item.img} alt="clothes pic" width='300px'/>
           <p>{item.name}</p>
           <p>{item.price} $</p>
           </div>     

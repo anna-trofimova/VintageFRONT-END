@@ -218,3 +218,16 @@ height: 100vh;
 .details-page {
 
 }
+
+.notFound {
+  background-image: url(/static/media/back2.9a707035.jpg);
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.notFound h1 {
+  margin:0;
+}
